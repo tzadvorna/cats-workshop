@@ -1,6 +1,15 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.is-hidden {
+  display: none;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   border: 1px solid red;
@@ -77,15 +86,29 @@ a {
 .nav-page a:focus {
   color: #f07f2e;
 }
-
 .hero {
   height: 480px;
+}
+
+.hero > .container {
+  height: 100%;
+  position: relative;
+}
+
+.hero-list {
+  height: 100%;
+  position: relative;
+}
+
+.hero-item {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background-color: orange;
   border-radius: 16px;
-  background-image: url(./img/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: relative;
 }
 
 .greeting {
@@ -94,8 +117,10 @@ a {
   border-radius: 16px;
   padding: 24px;
   position: absolute;
+  color: #ffffff;
   bottom: 52px;
-  left: 28pxpx;
+  left: 28px;
+  color: #ffffff;
 }
 
 .greeting h1 {
@@ -103,8 +128,42 @@ a {
   font-size: 32px;
   line-height: 32px;
   letter-spacing: 1.25px;
-  color: #ffffff;
   margin-bottom: 10px;
+}
+
+.hero-item.first {
+  background-image: url(./img/hero.jpg);
+}
+
+.hero-item.second {
+  background-image: url(./img/hero2.jpeg);
+}
+
+.hero-item.third {
+  background-image: url(./img/hero3.jpeg);
+}
+
+.hero-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hero-btn.next {
+  right: 36px;
+}
+
+.hero-btn.prev {
+  left: 36px;
 }
 
 .section {
@@ -154,7 +213,6 @@ a {
 
 .gallery li {
   flex-basis: calc((100% - 5 * 16px) / 6);
-  /* calc((100% - кіль-сть_відступів_в_рядку * значення_одного_відступу) / кіль-сть_елементів_в_рядку) */
   border-radius: 16px;
   overflow: hidden;
 }
@@ -300,5 +358,4 @@ a {
   .greeting p {
     font-size: 16px;
   }
-
 }
